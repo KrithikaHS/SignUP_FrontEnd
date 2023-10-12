@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signIn.css" type="text/css">
+</head>
+<body >
+    <div class="body"></div>
+    <div class="container" id="conTainer">
+        <p class="yes">Wanna Fill Form?<input id="checkBox" type="checkbox" placeholder="?">Check the Box..!</p>
+        <form action="" method="">
+            <h2 class="heading">Select U'r ProfilePic..!</h2><br><h1 class="small">U Can Change ProfilePic As U Level Up Your Game!!</h1>
+            <div >
+                <img class="profile" src="1.jpg" alt="."  onclick="profilePic(this);">
+                
+                  <img  class="profile" src="2.webp" alt="."  onclick="profilePic(this);">
+                
+                  <img  class="profile" src="3.jpg" alt="."  onclick="profilePic(this);">
+                  <div class="display">
+                    <img class="displayimg" id="expandedImg" alt="|" >
+                    <div id="imgtext"></div>
+                  </div>
+            </div>
+            <label for="email">
+                <input class="button" id="email" type="email" name="email" placeholder="Email Id plz!!" autocomplete="off" required>
+            </label><br>
+            <label for="username">
+                <input class="button" id="username" type="text" name="username" placeholder="Username" autocomplete="given-name" required>
+            </label><br>
+            <label for="password">
+                <input class="button" id="password" type="password" name="password" placeholder="Password" required>
+            </label><br>
+            <label for="cpassword">
+                <input class="button" id="cpassword" type="password" name="password" placeholder="Confirm Password" required>
+            </label><br>
+            <input class="resetbtn" type="reset" name="submit" value="Reset">
+            <input class="submitbtn" type="submit" name="submit" value="Submit">
+
+        </form>
+    </div>
+    <div>
+        <ul class="shapes">
+                <li></li>
+                <li></li>
+                <li>&#9830</li>
+                <li></li>
+                <li>&#916</li>
+                <li></li>
+                <li>&#9824</li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+</div >
+    <p class="hidden">START GAME !!!</p>
+    <script>
+        function profilePic(imgs) {
+          var expandImg = document.getElementById("expandedImg");
+          var imgText = document.getElementById("imgtext");
+          expandImg.src = imgs.src;
+          imgText.innerHTML = imgs.alt;
+          expandImg.parentElement.style.display = "block";
+        }
+        const conTainer= document.getElementById("conTainer");
+        const checkBox = document.getElementById("checkBox");
+
+        checkBox.addEventListener('change', function() {
+        if (this.checked) {
+        conTainer.style.animationPlayState = 'paused';
+           } else {
+        conTainer.style.animationPlayState = 'running';
+         }
+        });
+        </script>
+</body>
+</html>
+
